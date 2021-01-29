@@ -7,10 +7,67 @@
     <title>Главная</title>
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
 </head>
 <body>
 <main class="page">
-    <div class="content">
+<div class="popup-callback-bg popup-bg">
+    <div class="popup-callback popup">
+        <div class="popup-callback__back">
+            <img src="img/callback-bg-mask.png" alt="">
+            <img src="img/callback-bg.png" alt="">
+        </div>
+        <div class="popup-callback__close popup-close">
+            <picture>
+                <source srcset="img/cancel-black.svg" media="(max-width: 767px)">
+                <img src="img/cancel-white.svg" alt="">
+            </picture>
+        </div>
+        <form action="#" class="popup-callback__form form">
+            <p class="popup-callback__title">Отправить заявку</p>
+            <div class="popup-callback__block">
+                <label for="name">Имя</label>
+                <input id="name" type="text" placeholder="Алиса" class="_req">
+                <span>Поле заполнено неверно!</span>
+            </div>
+            <div class="popup-callback__block">
+                <label for="phone">Телефон</label>
+                <input id="phone" type="tel" placeholder="+7 (000) 000-00-00" class="_req _phone">
+                <span>Поле заполнено неверно!</span>
+            </div>
+            <div class="popup-callback__block">
+                <label for="mail">Электронная почта</label>
+                <input id="mail" type="email" placeholder="example@mail.ru" class="_req">
+                <span>Поле заполнено неверно!</span>
+            </div>
+            <button class="button" type="submit">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+<div class="popup-thanks-bg popup-bg">
+    <div class="popup-thanks popup">
+        <div class="popup-thanks__back">
+            <img src="img/callback-bg-mask.png" alt="">
+            <img src="img/callback-bg.png" alt="">
+        </div>
+        <div class="popup-thanks__close popup-close">
+            <picture>
+                <source srcset="img/cancel-black.svg" media="(max-width: 767px)">
+                <img src="img/cancel-white.svg" alt="">
+            </picture>
+        </div>
+        <div class="popup-thanks__img">
+            <img src="img/thanks.png" alt="">
+        </div>
+        <div class="popup-thanks__title">Ваша заявка принята!</div>
+        <div class="popup-thanks__subtitle">Наши эксперты свяжутся с вами в ближайшее время</div>
+        <button class="button popup-thanks__close">Отлично!</button>
+    </div>
+</div>    <div class="content">
 <header class="header">
     <div class="header__row container">
         <div class="header__left">
@@ -59,14 +116,13 @@
 </header>        <section class="main-screen">
             <div class="main-screen__main container">
                 <h1 class="main-screen__title">платформа оптовых&nbsp;закупок для&nbsp;дистрибьюторов HoReCa</h1>
-                <button class="button">Отправить заявку</button>
+                <button class="button popup-callback-open-btn">Отправить заявку</button>
             </div>
             <picture class="main-screen__back">
                 <source srcset="img/main-screen-mob.png" media="(max-width: 1023px)">
                 <img src="img/main-screen-pc.png" alt="">
             </picture>
         </section>
-
         <section class="product toScroll">
             <div class="container">
                 <div class="product__items">
@@ -103,7 +159,7 @@
         </section>
         <section class="conditions toScroll">
             <div class="conditions__main container">
-                <h2 class="conditions__title">Условия подключения к платформе:</h2>
+                <h2 class="title">Условия подключения к платформе:</h2>
                 <div class="conditions__block">
                     <div class="conditions__item">
                         <p class="conditions__item_title">Для производителей:</p>
@@ -124,41 +180,77 @@
                 </div>
             </div>
         </section>
-
         <section class="advantages toScroll">
             <div class="advantages__main container">
                 <h2 class="advantages__title">Наши преимущества:</h2>
-                <ul class="advantages__slider owl-carousel">
-                    <li>Склад категории «А», соблюдение температурных режимов, расположение, технологии wms</li>
-                    <li>Гарантированное качество товаров</li>
-                    <li>Прямые цены  производителей</li>
-                    <li>Гарантия прозрачности и чистоты сделок</li>
-                    <li>Собственная служба поддержки клиентов и контроля качества</li>
-                    <li>Подтверждение наличия товара</li>
-                    <li>Организация логистики от склада до склада</li>
-                </ul>
+                <div class="advantages__slider owl-carousel">
+                    <div class="advantages__slide"><img src="img/check-white.svg" alt="">Склад категории «А», соблюдение температурных режимов, расположение, технологии wms</div>
+                    <div class="advantages__slide"><img src="img/check-white.svg" alt="">Гарантированное качество товаров</div>
+                    <div class="advantages__slide"><img src="img/check-white.svg" alt="">Прямые цены  производителей</div>
+                    <div class="advantages__slide"><img src="img/check-white.svg" alt="">Гарантия прозрачности и чистоты сделок</div>
+                    <div class="advantages__slide"><img src="img/check-white.svg" alt="">Собственная служба поддержки клиентов и контроля качества</div>
+                    <div class="advantages__slide"><img src="img/check-white.svg" alt="">Подтверждение наличия товара</div>
+                    <div class="advantages__slide"><img src="img/check-white.svg" alt="">Организация логистики от склада до склада</div>
+                </div>
                 <ul class="advantages__full-list">
-                    <li>Склад категории «А», соблюдение температурных режимов, расположение, технологии wms</li>
-                    <li>Гарантированное качество товаров</li>
-                    <li>Прямые цены  производителей</li>
-                    <li>Гарантия прозрачности и чистоты сделок</li>
-                    <li>Собственная служба поддержки клиентов и контроля качества</li>
-                    <li>Подтверждение наличия товара</li>
-                    <li>Организация логистики от склада до склада</li>
+                    <li><img src="img/check-white.svg" alt="">Склад категории «А», соблюдение температурных режимов, расположение, технологии wms</li>
+                    <li><img src="img/check-white.svg" alt="">Гарантированное качество товаров</li>
+                    <li><img src="img/check-white.svg" alt="">Прямые цены  производителей</li>
+                    <li><img src="img/check-white.svg" alt="">Гарантия прозрачности и чистоты сделок</li>
+                    <li><img src="img/check-white.svg" alt="">Собственная служба поддержки клиентов и контроля качества</li>
+                    <li><img src="img/check-white.svg" alt="">Подтверждение наличия товара</li>
+                    <li><img src="img/check-white.svg" alt="">Организация логистики от склада до склада</li>
                 </ul>
-                <button class="advantages__toggle-button">Показать списком</button>
+                <button class="advantages__toggle-button advantages__show-list-button">Показать списком</button>
+                <button class="advantages__toggle-button advantages__hide-list-button">Скрыть список</button>
+            </div>
+            <div class="advantages__full-list-images">
+                <div class="advantages__full-list-image">
+                    <img src="img/advantages/small/item1.jpg" alt="">
+                </div>
+                <div class="advantages__full-list-image">
+                    <img src="img/advantages/small/item2.jpg" alt="">
+                </div>
+                <div class="advantages__full-list-image">
+                    <img src="img/advantages/small/item3.jpg" alt="">
+                </div>
+                <div class="advantages__full-list-image">
+                    <img src="img/advantages/small/item4.jpg" alt="">
+                </div>
+                <div class="advantages__full-list-image">
+                    <img src="img/advantages/small/item5.jpg" alt="">
+                </div>
+                <div class="advantages__full-list-image">
+                    <img src="img/advantages/small/item6.jpg" alt="">
+                </div>
+                <div class="advantages__full-list-image">
+                    <img src="img/advantages/small/item7.jpg" alt="">
+                </div>
             </div>
             <div class="advantages__images owl-carousel">
-                <img src="img/advantages/item1.jpg" alt="">
-                <img src="img/advantages/item2.jpg" alt="">
-                <img src="img/advantages/item3.jpg" alt="">
-                <img src="img/advantages/item4.jpg" alt="">
-                <img src="img/advantages/item5.jpg" alt="">
-                <img src="img/advantages/item6.jpg" alt="">
-                <img src="img/advantages/item7.jpg" alt="">
+                <div class="advantages__image">
+                    <img src="img/advantages/item1.jpg" alt="">
+                </div>
+                <div class="advantages__image">
+                    <img src="img/advantages/item2.jpg" alt="">
+                </div>
+                <div class="advantages__image">
+                    <img src="img/advantages/item3.jpg" alt="">
+                </div>
+                <div class="advantages__image">
+                    <img src="img/advantages/item4.jpg" alt="">
+                </div>
+                <div class="advantages__image">
+                    <img src="img/advantages/item5.jpg" alt="">
+                </div>
+                <div class="advantages__image">
+                    <img src="img/advantages/item6.jpg" alt="">
+                </div>
+                <div class="advantages__image">
+                    <img src="img/advantages/item7.jpg" alt="">
+                </div>
             </div>
         </section>
-
         <section class="benefit toScroll">
             <div class="container">
                 <h2 class="title">Что вы получите:</h2>
