@@ -591,6 +591,7 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 850px;
   position: relative;
   overflow: hidden;
+  background-color: #f1f1f3;
 }
 .main-screen__main {
   position: relative;
@@ -685,6 +686,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product {
+  position: relative;
   background-color: #f1f1f3;
   padding-top: 160px;
   padding-bottom: 100px;
@@ -754,6 +756,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .conditions {
+  position: relative;
   background-color: #f1f1f3;
   padding: 70px 0 198px;
 }
@@ -846,6 +849,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .advantages {
+  position: relative;
   padding-top: 60px;
   background-color: #0073BA;
 }
@@ -1033,6 +1037,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .benefit {
+  position: relative;
   padding-top: 200px;
 }
 @media (max-width: 767px) {
@@ -1148,6 +1153,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .capabilities {
+  position: relative;
   padding-top: 200px;
   padding-bottom: 50px;
   width: 100%;
@@ -1354,4 +1360,529 @@ h1, h2, h3, h4, h5, h6 {
 .footer__link:active {
   color: #0073BA;
   background-color: #ffffff;
+}
+
+.berry {
+  position: absolute;
+}
+
+.berry1 {
+  top: 90px;
+  left: 170px;
+  animation: 5s linear infinite both running berry1;
+  width: 110px;
+}
+@media (max-width: 1023px) {
+  .berry1 {
+    width: 90px;
+    top: auto;
+    bottom: 30%;
+    left: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .berry1 {
+    bottom: 40%;
+  }
+}
+
+@keyframes berry1 {
+  0% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(-15deg);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
+}
+.berry2 {
+  bottom: 20px;
+  right: 30px;
+  animation: 5s linear 0.3s infinite both running berry2;
+  width: 80px;
+}
+@media (max-width: 1720px) {
+  .berry2 {
+    display: none;
+  }
+}
+
+@keyframes berry2 {
+  0% {
+    transform: translate(0, 20px) rotate(45deg);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(55deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(45deg);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(45deg);
+  }
+  100% {
+    transform: translate(0, 20px) rotate(45deg);
+  }
+}
+.berry3 {
+  top: 20px;
+  right: 3%;
+  animation: 4s linear 0.7s infinite both running berry3;
+  width: 110px;
+}
+@media (max-width: 1023px) {
+  .berry3 {
+    width: 90px;
+    top: 15%;
+    right: 3%;
+  }
+}
+@media (max-width: 767px) {
+  .berry3 {
+    top: 400px;
+  }
+}
+
+@keyframes berry3 {
+  0% {
+    transform: translate(0, 0) rotate(-25deg);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(-35deg);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(-25deg);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(-15deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-25deg);
+  }
+}
+.berry4 {
+  top: 20px;
+  right: 3%;
+  animation: 5s linear 0.7s infinite both running berry4;
+  width: 150px;
+}
+@media (max-width: 1023px) {
+  .berry4 {
+    width: 90px;
+    top: 15%;
+    right: 3%;
+  }
+}
+@media (max-width: 767px) {
+  .berry4 {
+    top: 120px;
+  }
+}
+
+@keyframes berry4 {
+  0% {
+    transform: translate(0, 0) rotate(-25deg);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(-35deg) scale(0.95);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(-25deg) scale(1.05);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(-15deg) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-25deg);
+  }
+}
+.berry5 {
+  top: 50px;
+  left: 3%;
+  animation: 3s linear 0.2s infinite both running berry5;
+  width: 150px;
+}
+@media (max-width: 1023px) {
+  .berry5 {
+    width: 90px;
+    top: 25%;
+    left: 3%;
+  }
+}
+@media (max-width: 767px) {
+  .berry5 {
+    top: 400px;
+  }
+}
+
+@keyframes berry5 {
+  0% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(-15deg);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
+}
+.berry6 {
+  top: 50px;
+  right: 3%;
+  animation: 7s linear 0.2s infinite both running berry6;
+  width: 120px;
+}
+@media (max-width: 1023px) {
+  .berry6 {
+    top: 20px;
+    right: -20px;
+    width: 60px;
+  }
+}
+
+@keyframes berry6 {
+  0% {
+    transform: translate(0, 0) rotate(-25deg);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(-35deg) scale(0.95);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(-25deg) scale(1.05);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(-15deg) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-25deg);
+  }
+}
+.berry7 {
+  top: 180px;
+  right: 10%;
+  animation: 10s linear 0.2s infinite both running berry7;
+  width: 150px;
+}
+@media (max-width: 1670px) {
+  .berry7 {
+    right: auto;
+    left: 3%;
+  }
+}
+@media (max-width: 1270px) {
+  .berry7 {
+    top: 120px;
+  }
+}
+@media (max-width: 1023px) {
+  .berry7 {
+    right: 90px;
+    left: auto;
+    width: 90px;
+    top: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .berry7 {
+    width: 60px;
+  }
+}
+@media (max-width: 500px) {
+  .berry7 {
+    top: 80px;
+  }
+}
+
+@keyframes berry7 {
+  0% {
+    transform: translate(0, 0) rotate(-5deg) scale(0.56);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(-15deg) scale(0.5);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(-5deg) scale(0.44);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(5deg) scale(0.5);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-5deg) scale(0.56);
+  }
+}
+.berry8 {
+  top: 50px;
+  right: 3%;
+  animation: 3s linear 0.2s infinite both running berry8;
+  width: 150px;
+}
+@media (max-width: 1023px) {
+  .berry8 {
+    width: 90px;
+    top: 5%;
+    right: 3%;
+  }
+}
+@media (max-width: 767px) {
+  .berry8 {
+    right: -10px;
+  }
+}
+
+@keyframes berry8 {
+  0% {
+    transform: translate(0, 0) rotate(-25deg);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(-35deg) scale(0.95);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(-25deg) scale(1.05);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(-15deg) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-25deg);
+  }
+}
+.berry9 {
+  top: 200px;
+  right: 5%;
+  animation: 3s linear 0.2s infinite both running berry9;
+  width: 150px;
+}
+@media (max-width: 1400px) {
+  .berry9 {
+    right: -20px;
+  }
+}
+@media (max-width: 1023px) {
+  .berry9 {
+    width: 90px;
+    top: 30%;
+    right: 5%;
+  }
+}
+@media (max-width: 767px) {
+  .berry9 {
+    right: -30px;
+  }
+}
+@media (max-width: 400px) {
+  .berry9 {
+    display: none;
+  }
+}
+
+@keyframes berry9 {
+  0% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(-15deg);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
+}
+.berry10 {
+  bottom: 200px;
+  left: 3%;
+  animation: 3s linear 0.2s infinite both running berry10;
+  width: 150px;
+}
+@media (max-width: 1400px) {
+  .berry10 {
+    left: -30px;
+  }
+}
+@media (max-width: 1023px) {
+  .berry10 {
+    width: 90px;
+    bottom: 20%;
+    left: 3%;
+  }
+}
+@media (max-width: 767px) {
+  .berry10 {
+    left: -30px;
+  }
+}
+@media (max-width: 400px) {
+  .berry10 {
+    display: none;
+  }
+}
+
+@keyframes berry10 {
+  0% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(-15deg);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
+}
+.berry11 {
+  bottom: 50px;
+  left: 5%;
+  animation: 3s linear 0.2s infinite both running berry11;
+  width: 150px;
+}
+@media (max-width: 1400px) {
+  .berry11 {
+    bottom: -70px;
+  }
+}
+@media (max-width: 1023px) {
+  .berry11 {
+    width: 90px;
+    bottom: 5%;
+    left: 5%;
+  }
+}
+@media (max-width: 767px) {
+  .berry11 {
+    left: -10px;
+  }
+}
+@media (max-width: 400px) {
+  .berry11 {
+    display: none;
+  }
+}
+
+@keyframes berry11 {
+  0% {
+    transform: translate(0, 0) rotate(-25deg);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(-35deg) scale(0.95);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(-25deg) scale(1.05);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(-15deg) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-25deg);
+  }
+}
+.berry12 {
+  bottom: 50px;
+  right: 3%;
+  animation: 3s linear 0.2s infinite both running berry12;
+  width: 90px;
+}
+@media (max-width: 1400px) {
+  .berry12 {
+    right: -30px;
+  }
+}
+@media (max-width: 1023px) {
+  .berry12 {
+    width: 90px;
+    right: 3%;
+  }
+}
+@media (max-width: 767px) {
+  .berry12 {
+    right: -20px;
+  }
+}
+@media (max-width: 600px) {
+  .berry12 {
+    width: 60px;
+    bottom: 20px;
+  }
+}
+
+@keyframes berry12 {
+  0% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(-15deg);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
+}
+.berry13 {
+  top: 100px;
+  left: 5%;
+  animation: 3s linear 0.2s infinite both running berry13;
+  width: 90px;
+}
+@media (max-width: 1023px) {
+  .berry13 {
+    width: 90px;
+    left: 5%;
+  }
+}
+@media (max-width: 767px) {
+  .berry13 {
+    left: -10px;
+  }
+}
+@media (max-width: 600px) {
+  .berry13 {
+    top: 50px;
+    width: 60px;
+    left: -20px;
+  }
+}
+
+@keyframes berry13 {
+  0% {
+    transform: translate(0, 0) rotate(-25deg);
+  }
+  25% {
+    transform: translate(0, 10px) rotate(-35deg) scale(0.95);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(-25deg) scale(1.05);
+  }
+  75% {
+    transform: translate(0, 10px) rotate(-15deg) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-25deg);
+  }
 }
