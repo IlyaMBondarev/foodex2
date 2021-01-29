@@ -169,19 +169,34 @@ $(document).ready(function() {
     if ($('.advantages').length) {
         let owlList = $('.advantages .advantages__slider.owl-carousel');
         if (owlList.length) {
-            owlList.owlCarousel({
-                items: 1,
-                center: true,
-                mouseDrag: false,
-                touchDrag: false,
-                stagePadding: 410,
-                autoplay: true,
-                autoplayTimeout: 5000,
-                autoplaySpeed: 1000,
-                loop: true,
-                nav: false,
-                dots: false,
-            });
+            if (document.documentElement.scrollWidth > 1270) {
+                owlList.owlCarousel({
+                    items: 1,
+                    center: true,
+                    mouseDrag: false,
+                    touchDrag: false,
+                    stagePadding: 410,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    autoplaySpeed: 1000,
+                    loop: true,
+                    nav: false,
+                    dots: false,
+                });
+            } else {
+                owlList.owlCarousel({
+                    items: 1,
+                    center: true,
+                    mouseDrag: false,
+                    touchDrag: false,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    autoplaySpeed: 1000,
+                    loop: true,
+                    nav: false,
+                    dots: false,
+                });
+            }
         }
         let owlImages = $('.advantages .advantages__images.owl-carousel');
         if (owlImages.length) {
@@ -208,16 +223,16 @@ $(document).ready(function() {
             owlImagesSlider.style.maxHeight = '0';
             owlImagesSlider.style.minHeight = '0';
             fullList.style.maxHeight = fullList.scrollHeight + 'px';
-            fullListImages.style.maxHeight = fullList.scrollHeight + 'px';
+            fullListImages.style.maxHeight = fullListImages.scrollHeight + 'px';
             showButton.css({'display': 'none'});
             hideButton.css({'display': 'block'});
         })
         hideButton.click(function() {
-            owlListSlider.style.maxHeight = owlListSlider.scrollHeight + 'px';
-            owlImagesSlider.style.maxHeight = owlImagesSlider.scrollHeight + 'px';
-            owlImagesSlider.style.minHeight = owlImagesSlider.scrollHeight + 'px';
-            fullList.style.maxHeight = '0';
-            fullListImages.style.maxHeight = '0';
+            owlListSlider.style.maxHeight = '';
+            owlImagesSlider.style.maxHeight = '';
+            owlImagesSlider.style.minHeight = '';
+            fullList.style.maxHeight = '';
+            fullListImages.style.maxHeight = '';
             showButton.css({'display': 'block'});
             hideButton.css({'display': 'none'});
         })
