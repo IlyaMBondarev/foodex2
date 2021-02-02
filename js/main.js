@@ -163,6 +163,37 @@ if ($('.popup-callback-bg').length) {
         });
     }
 }
+
+// ягоды
+
+let berriesBlock = document.querySelector('.berries');
+let sources = ['blackberry','blackcurrant','blueberry','cherry','raspberry','strawberry','blackberry2','blackcurrant2','raspberry2']
+
+setInterval(() => {
+    let srcLeft = Math.floor(Math.random()*sources.length);
+    let srcRight = Math.floor(Math.random()*sources.length);
+    let left = document.createElement('img');
+    left.classList.add('berry');
+    left.classList.add('berry-left');
+    left.src = 'img/berries/' + sources[srcLeft] + '.png';
+    left.alt = '';
+    let right = document.createElement('img');
+    right.classList.add('berry');
+    right.classList.add('berry-right');
+    right.src = 'img/berries/' + sources[srcRight] + '.png';
+    right.alt = '';
+    berriesBlock.appendChild(left);
+    left.style.animation = '4s linear 0s 1 forwards flyDown';
+    berriesBlock.appendChild(right);
+    right.style.animation = '4s linear 1.5s 1 forwards flyDown';
+    setTimeout(()=>{
+        left.parentNode.removeChild(left);
+    }, 4500)
+    setTimeout(()=>{
+        right.parentNode.removeChild(right);
+    }, 6500)
+}, 3000)
+
 //карусель-слайдер на странице услуги
 
 $(document).ready(function() {
