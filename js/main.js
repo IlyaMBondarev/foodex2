@@ -4,7 +4,6 @@ document.querySelector('.page').classList.add('loaded');
 let burgerInput = document.getElementById('burger');
 let lists = document.querySelector('.header').querySelectorAll('ul');
 let toScroll = document.querySelectorAll('.toScroll');
-let mailLink = document.querySelector('.header__right').querySelector('a');
 
 for(let i = 0; i < toScroll.length; i++) {
     if (toScroll[i].offsetTop > document.documentElement.scrollTop + 0.8 * document.documentElement.clientHeight) {
@@ -13,11 +12,6 @@ for(let i = 0; i < toScroll.length; i++) {
 }
 
 function scrollCheck() {
-    if (document.documentElement.scrollTop > 0) {
-        mailLink.style.color = '#000000';
-    } else {
-        mailLink.style.color = '';
-    }
     for(let i = 0; i < toScroll.length; i++) {
         if (toScroll[i].offsetTop <= document.documentElement.scrollTop + 0.8 * document.documentElement.clientHeight) {
             toScroll[i].classList.add('visible');
