@@ -163,7 +163,7 @@ if ($('.popup-callback-bg').length) {
 let berriesBlock = document.querySelector('.berries');
 let sources = ['blackberry','blackcurrant','blueberry','cherry','raspberry','strawberry','blackberry2','blackcurrant2','raspberry2']
 
-setInterval(() => {
+setInterval(function () {
     let srcLeft = Math.floor(Math.random()*sources.length);
     let srcRight = Math.floor(Math.random()*sources.length);
     let left = document.createElement('img');
@@ -180,10 +180,10 @@ setInterval(() => {
     left.style.animation = '4s linear 0s 1 forwards flyDown';
     berriesBlock.appendChild(right);
     right.style.animation = '4s linear 1.5s 1 forwards flyDown';
-    setTimeout(()=>{
+    setTimeout(function () {
         left.parentNode.removeChild(left);
     }, 4500)
-    setTimeout(()=>{
+    setTimeout(function () {
         right.parentNode.removeChild(right);
     }, 6500)
 }, 3000)

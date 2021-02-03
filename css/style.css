@@ -741,6 +741,8 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 .product__item_content {
+  max-width: 100%;
+  white-space: normal;
   margin-left: 10px;
   font-size: 16px;
   line-height: 150%;
@@ -1150,6 +1152,8 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 200px;
   padding-bottom: 50px;
   width: 100%;
+}
+.capabilities > .container {
   display: flex;
   flex-direction: column;
   align-items: center;
