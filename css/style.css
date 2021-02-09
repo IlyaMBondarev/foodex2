@@ -617,6 +617,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 133%;
   color: #000000;
 }
+@media (max-width: 1023px) {
+  .main-screen__title {
+    margin-top: 0;
+  }
+}
 @media (max-width: 767px) {
   .main-screen__title {
     text-align: center;
