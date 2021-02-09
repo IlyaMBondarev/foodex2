@@ -588,12 +588,10 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
   height: 100vh;
   padding-top: 130px;
-  padding-bottom: 300px;
   min-height: 850px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
 }
 @media (max-width: 1023px) {
   .main-screen__main {
@@ -612,6 +610,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .main-screen__title {
   max-width: 520px;
+  margin-top: 200px;
   margin-bottom: 70px;
   font-family: "semibold";
   font-size: 45px;
@@ -634,19 +633,19 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   right: 0;
 }
-@media (max-width: 1720px) {
-  .main-screen__back {
-    right: -200px;
-  }
-}
 @media (max-width: 1440px) {
   .main-screen__back {
-    right: -300px;
+    right: -100px;
+  }
+}
+@media (max-width: 1280px) {
+  .main-screen__back {
+    right: -150px;
   }
 }
 @media (max-width: 1180px) {
   .main-screen__back {
-    right: -400px;
+    right: -300px;
   }
 }
 @media (max-width: 1023px) {
@@ -751,11 +750,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .conditions {
   position: relative;
-  padding: 70px 0 198px;
+  padding: 70px 0 100px;
 }
 @media (max-width: 767px) {
   .conditions {
-    padding: 50px 0 95px;
+    padding: 50px 0;
   }
 }
 .conditions__block {
@@ -863,10 +862,59 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 24px;
   }
 }
-.advantages__slider {
+.advantages__block {
   max-height: 100px;
   transition: max-height 0.8s ease;
   overflow: hidden;
+}
+@media (max-width: 767px) {
+  .advantages__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .advantages__block-slider {
+    width: 300px;
+  }
+}
+@media (max-width: 767px) and (max-width: 400px) {
+  .advantages__block-slider {
+    width: 250px;
+  }
+}
+.advantages__next-button {
+  display: none;
+}
+@media (max-width: 767px) {
+  .advantages__next-button {
+    flex-grow: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .advantages__next-button:active {
+    background-color: #f1f1f3;
+  }
+}
+@media (max-width: 767px) and (max-width: 400px) {
+  .advantages__next-button {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
+    max-width: 25px;
+    max-height: 25px;
+  }
 }
 .advantages__slider .owl-stage {
   display: flex;
@@ -887,6 +935,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 125%;
   color: #ffffff;
 }
+@media (max-width: 1270px) {
+  .advantages__slide {
+    justify-content: center;
+  }
+}
 @media (max-width: 767px) {
   .advantages__slide {
     font-size: 16px;
@@ -896,9 +949,9 @@ h1, h2, h3, h4, h5, h6 {
   width: auto !important;
   padding-right: 25px;
 }
-@media (max-width: 1270px) {
-  .advantages__slide {
-    justify-content: center;
+@media (max-width: 767px) {
+  .advantages__slide > img {
+    display: none !important;
   }
 }
 .advantages__full-list {
@@ -946,6 +999,30 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "semibold";
   font-size: 14px;
 }
+@media (max-width: 767px) {
+  .advantages__toggle-button {
+    display: none;
+  }
+  .advantages__toggle-button-mob {
+    display: block;
+  }
+}
+.advantages__pc-buttons {
+  display: block;
+}
+@media (max-width: 767px) {
+  .advantages__pc-buttons {
+    display: none;
+  }
+}
+.advantages__mob-buttons {
+  display: none;
+}
+@media (max-width: 767px) {
+  .advantages__mob-buttons {
+    display: block;
+  }
+}
 .advantages__hide-list-button {
   display: none;
 }
@@ -992,10 +1069,9 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   height: 26.5vw;
-  min-height: 300px;
   max-height: 26.5vw;
 }
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .advantages__images {
     min-height: 200px;
   }
@@ -1004,13 +1080,12 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   height: 26.5vw;
-  min-height: 300px;
   max-height: 26.5vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .advantages__image {
     min-height: 200px;
   }
@@ -1033,7 +1108,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .benefit {
   position: relative;
-  padding-top: 200px;
+  padding-top: 60px;
 }
 @media (max-width: 767px) {
   .benefit {
@@ -1372,6 +1447,6 @@ h1, h2, h3, h4, h5, h6 {
   }
   100% {
     top: 105vh;
-    transform: rotate(1080deg);
+    transform: rotate(590deg);
   }
 }

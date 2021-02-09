@@ -177,16 +177,16 @@ setInterval(function () {
     right.src = 'img/berries/' + sources[srcRight] + '.png';
     right.alt = '';
     berriesBlock.appendChild(left);
-    left.style.animation = '4s linear 0s 1 forwards flyDown';
+    left.style.animation = '2.8s linear 0s 1 forwards flyDown';
     berriesBlock.appendChild(right);
-    right.style.animation = '4s linear 1.5s 1 forwards flyDown';
+    right.style.animation = '2.8s linear 1.1s 1 forwards flyDown';
     setTimeout(function () {
         left.parentNode.removeChild(left);
-    }, 4500)
+    }, 3150)
     setTimeout(function () {
         right.parentNode.removeChild(right);
-    }, 6500)
-}, 3000)
+    }, 4550)
+}, 2100)
 
 //карусель-слайдер на странице услуги
 
@@ -208,9 +208,23 @@ $(document).ready(function() {
                     nav: false,
                     dots: false,
                 });
+            } else if (document.documentElement.scrollWidth > 767) {
+                owlList.owlCarousel({
+                    items: 1,
+                    center: true,
+                    mouseDrag: false,
+                    touchDrag: false,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    autoplaySpeed: 1000,
+                    loop: true,
+                    nav: false,
+                    dots: false,
+                });
             } else {
                 owlList.owlCarousel({
                     items: 1,
+                    margin: 40,
                     center: true,
                     mouseDrag: false,
                     touchDrag: false,
@@ -237,14 +251,38 @@ $(document).ready(function() {
                 dots: false,
             });
         }
-        let owlListSlider = document.querySelector('.advantages').querySelector('.advantages__slider');
+
+        $('.advantages__next-button').click(function() {
+            owlList.trigger('next.owl.carousel');
+            owlList.trigger('stop.owl.autoplay');
+            owlList.data('owl.carousel').settings.autoplay = false;
+            owlList.data('owl.carousel').options.autoplay = false;
+            owlList.trigger('refresh.owl.carousel');
+            owlImages.trigger('next.owl.carousel');
+            owlImages.trigger('stop.owl.autoplay');
+            owlImages.data('owl.carousel').settings.autoplay = false;
+            owlImages.data('owl.carousel').options.autoplay = false;
+            owlImages.trigger('refresh.owl.carousel');
+            setTimeout(() => {
+                owlList.trigger('play.owl.autoplay');
+                owlList.data('owl.carousel').settings.autoplay = true;
+                owlList.data('owl.carousel').options.autoplay = true;
+                owlList.trigger('refresh.owl.carousel');
+                owlImages.trigger('play.owl.autoplay');
+                owlImages.data('owl.carousel').settings.autoplay = true;
+                owlImages.data('owl.carousel').options.autoplay = true;
+                owlImages.trigger('refresh.owl.carousel');
+            },100)
+        });
+
+        let owlListBlock = document.querySelector('.advantages').querySelector('.advantages__block');
         let owlImagesSlider = document.querySelector('.advantages').querySelector('.advantages__images');
         let fullList = document.querySelector('.advantages').querySelector('.advantages__full-list');
         let fullListImages = document.querySelector('.advantages').querySelector('.advantages__full-list-images');
         let showButton = $('.advantages__show-list-button');
         let hideButton = $('.advantages__hide-list-button');
         showButton.click(function() {
-            owlListSlider.style.maxHeight = '0';
+            owlListBlock.style.maxHeight = '0';
             owlImagesSlider.style.maxHeight = '0';
             owlImagesSlider.style.minHeight = '0';
             fullList.style.maxHeight = fullList.scrollHeight + 'px';
@@ -253,7 +291,7 @@ $(document).ready(function() {
             hideButton.css({'display': 'block'});
         })
         hideButton.click(function() {
-            owlListSlider.style.maxHeight = '';
+            owlListBlock.style.maxHeight = '';
             owlImagesSlider.style.maxHeight = '';
             owlImagesSlider.style.minHeight = '';
             fullList.style.maxHeight = '';
