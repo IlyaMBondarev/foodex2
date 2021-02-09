@@ -177,16 +177,16 @@ setInterval(function () {
     right.src = 'img/berries/' + sources[srcRight] + '.png';
     right.alt = '';
     berriesBlock.appendChild(left);
-    left.style.animation = '2.8s linear 0s 1 forwards flyDown';
+    left.style.animation = '5.2s linear 0s 1 forwards flyDown';
     berriesBlock.appendChild(right);
-    right.style.animation = '2.8s linear 1.1s 1 forwards flyDown';
+    right.style.animation = '5.2s linear 2.4s 1 forwards flyDown';
     setTimeout(function () {
         left.parentNode.removeChild(left);
-    }, 3150)
+    }, 5850)
     setTimeout(function () {
         right.parentNode.removeChild(right);
-    }, 4550)
-}, 2100)
+    }, 8450)
+}, 4000)
 
 //карусель-слайдер на странице услуги
 
