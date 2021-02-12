@@ -13,6 +13,13 @@ function showCurrentBlock() {
         header.style.background = 'rgba(255,255,255,0.5)';
         changingColorBlock.style.color = "#000000";
         changingColorBlock.querySelector('svg > *').style.fill = "#000000";
+        if (document.documentElement.scrollHeight <= document.documentElement.scrollTop + document.documentElement.offsetHeight + footer.scrollHeight/2) {
+            left.style.top = '105vh';
+            right.style.top = '105vh';
+        } else {
+            left.style.top = '50vh';
+            right.style.top = '50vh';
+        }
     } else {
         header.style.background = '';
         changingColorBlock.style.color = "#ffffff";
@@ -35,6 +42,10 @@ let indexOfCurrentBlock = 0;
 
 let changingColorBlock = document.querySelector('.header__right');
 let header = document.querySelector('.header');
+
+let left = document.createElement('img');
+let right = document.createElement('img');
+let footer = document.querySelector('.footer');
 
 for(let i = 0; i < toScroll.length; i++) {
     if (toScroll[i].offsetTop > document.documentElement.scrollTop + 0.8 * document.documentElement.clientHeight) {
@@ -240,23 +251,31 @@ if ($('.popup-callback-bg').length) {
 let berriesBlock = document.querySelector('.berries');
 let sources = ['blackberry','blackcurrant','blueberry','cherry','raspberry','strawberry','blackberry2','blackcurrant2','raspberry2']
 
+
 setTimeout(function () {
     let srcLeft = Math.floor(Math.random()*sources.length);
     let srcRight = Math.floor(Math.random()*sources.length);
-    let left = document.createElement('img');
     left.classList.add('berry');
     left.classList.add('berry-left');
     left.src = 'img/berries/' + sources[srcLeft] + '.png';
     left.alt = '';
-    let right = document.createElement('img');
     right.classList.add('berry');
     right.classList.add('berry-right');
     right.src = 'img/berries/' + sources[srcRight] + '.png';
     right.alt = '';
     berriesBlock.appendChild(left);
-    left.style.animation = '5.2s linear 0s 1 forwards flyDown, 5.2s linear 0s infinite forwards rotating';
+    left.style.animation = '8s linear 0s infinite forwards rotating';
     berriesBlock.appendChild(right);
-    right.style.animation = '5.2s linear 2.4s 1 forwards flyDown, 5.2s linear 2.4s infinite forwards rotating';
+    right.style.animation = '8s linear 0s infinite forwards rotating';
+    setTimeout(function () {
+        if (document.documentElement.scrollHeight <= document.documentElement.scrollTop + document.documentElement.offsetHeight + footer.scrollHeight/2) {
+            left.style.top = '105vh';
+            right.style.top = '105vh';
+        } else {
+            left.style.top = '50vh';
+            right.style.top = '50vh';
+        }
+    }, 1000)
     setInterval(function () {
         let newSrcLeft = Math.floor(Math.random()*sources.length);
         let newSrcRight = Math.floor(Math.random()*sources.length);
@@ -269,7 +288,7 @@ setTimeout(function () {
             right.style.opacity = '';
         },1050)
     }, 5000)
-}, 4000)
+}, 3000)
 
 //карусель-слайдер на странице услуги
 

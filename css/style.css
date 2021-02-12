@@ -1400,7 +1400,6 @@ h1, h2, h3, h4, h5, h6 {
   top: -20vh;
   width: 100px;
   opacity: 1;
-  transition: opacity 1s linear;
 }
 @media (max-width: 1550px) {
   .berry {
@@ -1414,6 +1413,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .berry-left {
   left: 30px;
+  transition: opacity 1s linear, top 5.2s ease;
 }
 @media (max-width: 1550px) {
   .berry-left {
@@ -1432,6 +1432,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .berry-right {
   right: 30px;
+  transition: opacity 1s linear, top 5.2s ease 1.2s;
 }
 @media (max-width: 1550px) {
   .berry-right {
@@ -1449,14 +1450,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@keyframes flyDown {
-  0% {
-    top: -20vh;
-  }
-  100% {
-    top: 50vh;
-  }
-}
 @keyframes rotating {
   0% {
     transform: translateY(-50%) rotate(0deg);
