@@ -1,17 +1,23 @@
 
 document.querySelector('.page').classList.add('loaded');
 
-let burgerInput = document.getElementById('burger');
-let lists = document.querySelector('.header').querySelectorAll('ul');
-let toScroll = document.querySelectorAll('.toScroll');
-
-for(let i = 0; i < toScroll.length; i++) {
-    if (toScroll[i].offsetTop > document.documentElement.scrollTop + 0.8 * document.documentElement.clientHeight) {
-        toScroll[i].classList.add('hidden');
+function showBlocks(i) {
+    for (let j = i; j >= 0; j--) {
+        toScroll[j].classList.add('visible');
+        toScroll[j].classList.remove('hidden');
     }
 }
 
-function scrollCheck() {
+function showCurrentBlock() {
+    if (document.documentElement.scrollTop !== 0) {
+        header.style.background = 'rgba(255,255,255,0.5)';
+        changingColorBlock.style.color = "#000000";
+        changingColorBlock.querySelector('svg > *').style.fill = "#000000";
+    } else {
+        header.style.background = '';
+        changingColorBlock.style.color = "#ffffff";
+        changingColorBlock.querySelector('svg > *').style.fill = "#ffffff";
+    }
     for(let i = 0; i < toScroll.length; i++) {
         if (toScroll[i].offsetTop <= document.documentElement.scrollTop + 0.8 * document.documentElement.clientHeight) {
             toScroll[i].classList.add('visible');
@@ -20,32 +26,103 @@ function scrollCheck() {
     }
 }
 
-window.addEventListener('scroll', scrollCheck);
+//появление элементов при скролле
+
+let burgerInput = document.getElementById('burger');
+let lists = document.querySelector('.header').querySelectorAll('ul');
+let toScroll = document.querySelectorAll('.toScroll');
+let indexOfCurrentBlock = 0;
+
+let changingColorBlock = document.querySelector('.header__right');
+let header = document.querySelector('.header');
+
+for(let i = 0; i < toScroll.length; i++) {
+    if (toScroll[i].offsetTop > document.documentElement.scrollTop + 0.8 * document.documentElement.clientHeight) {
+        toScroll[i].classList.add('hidden');
+    }
+    if (toScroll[i].offsetTop <= document.documentElement.scrollTop) {
+        indexOfCurrentBlock = i;
+    }
+}
+
+if (document.documentElement.scrollWidth >= 1025) {
+    toScroll[indexOfCurrentBlock].scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+window.addEventListener('scroll', showCurrentBlock);
+
+window.addEventListener('mousewheel', function (event) {
+    if (document.documentElement.scrollWidth >= 1025) {
+        if (event.deltaY > 0 || event.wheelDelta < 0) {
+            if (document.documentElement.scrollTop + document.documentElement.offsetHeight + 1 >= toScroll[indexOfCurrentBlock].offsetTop + toScroll[indexOfCurrentBlock].offsetHeight) {
+                if (toScroll[indexOfCurrentBlock+1]) {
+                    toScroll[++indexOfCurrentBlock].scrollIntoView({
+                        block: 'start',
+                        behavior: 'smooth'
+                    });
+                }
+            } else {
+                if (!(event.deltaY)) {
+                    toScroll[indexOfCurrentBlock].scrollIntoView(false);
+                } else {
+                    toScroll[indexOfCurrentBlock].scrollIntoView({
+                        block: 'end',
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        } else if (event.deltaY < 0 || event.wheelDelta > 0) {
+            if (document.documentElement.scrollTop <= toScroll[indexOfCurrentBlock].offsetTop) {
+                if (toScroll[indexOfCurrentBlock-1]) {
+                    if (!(event.deltaY)) {
+                        toScroll[--indexOfCurrentBlock].scrollIntoView(false);
+                    } else {
+                        toScroll[--indexOfCurrentBlock].scrollIntoView({
+                            block: 'end',
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            } else {
+                toScroll[indexOfCurrentBlock].scrollIntoView({
+                    block: 'start',
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }
+    showBlocks();
+});
 
 //скролл при нажатии на пункт меню
+
 
 function closeBurger() {
     burgerInput.checked = false;
 }
 
+let _loop = function _loop(links, i) {
+    links[i].addEventListener('click', function (event) {
+        event.preventDefault();
+
+        if (toScroll[i]) {
+            indexOfCurrentBlock = i;
+            toScroll[indexOfCurrentBlock].scrollIntoView({
+                behavior: 'smooth'
+            });
+            closeBurger();
+            showBlocks(indexOfCurrentBlock);
+        }
+    });
+};
+
 for (let i = 0; i < lists.length; i++) {
     let links = lists[i].querySelectorAll('a');
 
-    let _loop = function _loop(i) {
-        links[i].addEventListener('click', function (event) {
-            event.preventDefault();
-
-            if (toScroll[i]) {
-                toScroll[i].scrollIntoView({
-                    behavior: 'smooth'
-                });
-                closeBurger();
-            }
-        });
-    };
-
     for (let i = 0; i < links.length; i++) {
-        _loop(i);
+        _loop(links, i);
     }
 }
 
@@ -163,7 +240,7 @@ if ($('.popup-callback-bg').length) {
 let berriesBlock = document.querySelector('.berries');
 let sources = ['blackberry','blackcurrant','blueberry','cherry','raspberry','strawberry','blackberry2','blackcurrant2','raspberry2']
 
-setInterval(function () {
+setTimeout(function () {
     let srcLeft = Math.floor(Math.random()*sources.length);
     let srcRight = Math.floor(Math.random()*sources.length);
     let left = document.createElement('img');
@@ -177,67 +254,28 @@ setInterval(function () {
     right.src = 'img/berries/' + sources[srcRight] + '.png';
     right.alt = '';
     berriesBlock.appendChild(left);
-    left.style.animation = '5.2s linear 0s 1 forwards flyDown';
+    left.style.animation = '5.2s linear 0s 1 forwards flyDown, 5.2s linear 0s infinite forwards rotating';
     berriesBlock.appendChild(right);
-    right.style.animation = '5.2s linear 2.4s 1 forwards flyDown';
-    setTimeout(function () {
-        left.parentNode.removeChild(left);
-    }, 5850)
-    setTimeout(function () {
-        right.parentNode.removeChild(right);
-    }, 8450)
+    right.style.animation = '5.2s linear 2.4s 1 forwards flyDown, 5.2s linear 2.4s infinite forwards rotating';
+    setInterval(function () {
+        let newSrcLeft = Math.floor(Math.random()*sources.length);
+        let newSrcRight = Math.floor(Math.random()*sources.length);
+        left.style.opacity = '0';
+        right.style.opacity = '0';
+        setTimeout(function() {
+            left.src = 'img/berries/' + sources[newSrcLeft] + '.png';
+            right.src = 'img/berries/' + sources[newSrcRight] + '.png';
+            left.style.opacity = '';
+            right.style.opacity = '';
+        },1050)
+    }, 5000)
 }, 4000)
 
 //карусель-слайдер на странице услуги
 
 $(document).ready(function() {
     if ($('.advantages').length) {
-        let owlList = $('.advantages .advantages__slider.owl-carousel');
-        if (owlList.length) {
-            if (document.documentElement.scrollWidth > 1270) {
-                owlList.owlCarousel({
-                    items: 1,
-                    center: true,
-                    mouseDrag: false,
-                    touchDrag: false,
-                    stagePadding: 410,
-                    autoplay: true,
-                    autoplayTimeout: 5000,
-                    autoplaySpeed: 1000,
-                    loop: true,
-                    nav: false,
-                    dots: false,
-                });
-            } else if (document.documentElement.scrollWidth > 767) {
-                owlList.owlCarousel({
-                    items: 1,
-                    center: true,
-                    mouseDrag: false,
-                    touchDrag: false,
-                    autoplay: true,
-                    autoplayTimeout: 5000,
-                    autoplaySpeed: 1000,
-                    loop: true,
-                    nav: false,
-                    dots: false,
-                });
-            } else {
-                owlList.owlCarousel({
-                    items: 1,
-                    margin: 40,
-                    center: true,
-                    mouseDrag: false,
-                    touchDrag: false,
-                    autoplay: true,
-                    autoplayTimeout: 5000,
-                    autoplaySpeed: 1000,
-                    loop: true,
-                    nav: false,
-                    dots: false,
-                });
-            }
-        }
-        let owlImages = $('.advantages .advantages__images.owl-carousel');
+        let owlImages = $('.advantages .advantages__slider.owl-carousel');
         if (owlImages.length) {
             owlImages.owlCarousel({
                 items: 1,
@@ -253,21 +291,12 @@ $(document).ready(function() {
         }
 
         $('.advantages__next-button').click(function() {
-            owlList.trigger('next.owl.carousel');
-            owlList.trigger('stop.owl.autoplay');
-            owlList.data('owl.carousel').settings.autoplay = false;
-            owlList.data('owl.carousel').options.autoplay = false;
-            owlList.trigger('refresh.owl.carousel');
             owlImages.trigger('next.owl.carousel');
             owlImages.trigger('stop.owl.autoplay');
             owlImages.data('owl.carousel').settings.autoplay = false;
             owlImages.data('owl.carousel').options.autoplay = false;
             owlImages.trigger('refresh.owl.carousel');
             setTimeout(() => {
-                owlList.trigger('play.owl.autoplay');
-                owlList.data('owl.carousel').settings.autoplay = true;
-                owlList.data('owl.carousel').options.autoplay = true;
-                owlList.trigger('refresh.owl.carousel');
                 owlImages.trigger('play.owl.autoplay');
                 owlImages.data('owl.carousel').settings.autoplay = true;
                 owlImages.data('owl.carousel').options.autoplay = true;
@@ -275,27 +304,21 @@ $(document).ready(function() {
             },100)
         });
 
-        let owlListBlock = document.querySelector('.advantages').querySelector('.advantages__block');
-        let owlImagesSlider = document.querySelector('.advantages').querySelector('.advantages__images');
+        let owlImagesSlider = document.querySelector('.advantages').querySelector('.advantages__block');
         let fullList = document.querySelector('.advantages').querySelector('.advantages__full-list');
-        let fullListImages = document.querySelector('.advantages').querySelector('.advantages__full-list-images');
         let showButton = $('.advantages__show-list-button');
         let hideButton = $('.advantages__hide-list-button');
         showButton.click(function() {
-            owlListBlock.style.maxHeight = '0';
             owlImagesSlider.style.maxHeight = '0';
             owlImagesSlider.style.minHeight = '0';
             fullList.style.maxHeight = fullList.scrollHeight + 'px';
-            fullListImages.style.maxHeight = fullListImages.scrollHeight + 'px';
             showButton.css({'display': 'none'});
             hideButton.css({'display': 'block'});
         })
         hideButton.click(function() {
-            owlListBlock.style.maxHeight = '';
             owlImagesSlider.style.maxHeight = '';
             owlImagesSlider.style.minHeight = '';
             fullList.style.maxHeight = '';
-            fullListImages.style.maxHeight = '';
             showButton.css({'display': 'block'});
             hideButton.css({'display': 'none'});
         })

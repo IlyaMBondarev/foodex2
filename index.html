@@ -70,19 +70,27 @@
     <div class="content">
 <header class="header">
     <div class="header__row container">
-        <div class="header__logo">
+        <div class="header__left">
+            <div class="header__logo">
             <a href="index.html">
                 <img src="img/logo.svg" alt="">
             </a>
         </div>
-        <nav class="header__menu">
-            <ul>
-                <li><a href="#">Продукт</a></li>
-                <li><a href="#">Возможности</a></li>
-                <li><a href="#">Выгода</a></li>
-                <li><a href="#">Условия</a></li>
-            </ul>
-        </nav>
+            <nav class="header__menu">
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Возможности</a></li>
+                    <li><a href="#">Выгода</a></li>
+                    <li><a href="#">Условия</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="tel:+78002229697" class="header__right">
+            <svg>
+                <path d="M14.0177 10.7235L11.901 10.4818C11.3927 10.4235 10.8927 10.5985 10.5344 10.9568L9.00104 12.4901C6.64271 11.2901 4.70938 9.36514 3.50938 6.99847L5.05104 5.4568C5.40938 5.09847 5.58438 4.59847 5.52604 4.09014L5.28438 1.99014C5.18438 1.14847 4.47604 0.515137 3.62604 0.515137H2.18438C1.24271 0.515137 0.459376 1.29847 0.51771 2.24014C0.959376 9.3568 6.65104 15.0401 13.7594 15.4818C14.701 15.5401 15.4844 14.7568 15.4844 13.8151V12.3735C15.4927 11.5318 14.8594 10.8235 14.0177 10.7235Z"/>
+            </svg>
+            <span>8 800 222 9697</span>
+        </a>
         <div class="header__burger">
             <input id="burger" type="checkbox">
             <label for="burger">
@@ -98,7 +106,7 @@
                         <span></span>
                     </label>
                     <ul>
-                        <li><a href="#">Продукт</a></li>
+                        <li><a href="#">Главная</a></li>
                         <li><a href="#">Возможности</a></li>
                         <li><a href="#">Выгода</a></li>
                         <li><a href="#">Условия</a></li>
@@ -107,137 +115,127 @@
             </div>
         </div>
     </div>
-</header>        <section class="main-screen">
-            <div class="main-screen__main container">
-                <h1 class="main-screen__title">Платформа оптовых&nbsp;закупок для&nbsp;дистрибьюторов HoReCa</h1>
-                <button class="button popup-callback-open-btn"><span>Отправить заявку</span></button>
-            </div>
-            <picture class="main-screen__back">
-                <source srcset="img/main-screen-mob.png" media="(max-width: 1023px)">
-                <img src="img/main-screen-pc.png" alt="">
-            </picture>
-        </section>
-        <section class="product toScroll">
-            <div class="container">
-                <div class="product__items">
-                    <article class="product__item">
-                        <div class="product__item_icon">
-                            <img src="img/product/fish.svg" alt="">
-                        </div>
-                        <p class="product__item_title">Прямые цены от поставщиков</p>
-                        <p class="product__item_content">Понимание реальной рыночной стоимости в момент закупки</p>
-                    </article>
-                    <article class="product__item">
-                        <div class="product__item_icon">
-                            <img src="img/product/box.svg" alt="">
-                        </div>
-                        <p class="product__item_title">Склад категории «А»</p>
-                        <p class="product__item_content">Отгрузка всех категорий товаров с единого  распределительного центра в Москве</p>
-                    </article>
-                    <article class="product__item">
-                        <div class="product__item_icon">
-                            <img src="img/product/infinite.svg" alt="">
-                        </div>
-                        <p class="product__item_title">Магистральная логистика</p>
-                        <p class="product__item_content">Доставка по всей территории России</p>
-                    </article>
-                    <article class="product__item">
-                        <div class="product__item_icon">
-                            <img src="img/product/bag-clock.svg" alt="">
-                        </div>
-                        <p class="product__item_title">Гарантия прозрачности сделок</p>
-                        <p class="product__item_content">Все поставщики  надёжного поставщика за несколько минут вместо стандартных 45 дней</p>
-                    </article>
+</header>        <div class="first-blocks toScroll">
+            <section class="main-screen">
+                <div class="main-screen__main container">
+                    <h1 class="main-screen__title">Платформа оптовых&nbsp;закупок для&nbsp;дистрибьюторов HoReCa</h1>
+                    <button class="button popup-callback-open-btn"><span>Отправить заявку</span></button>
                 </div>
-            </div>
-        </section>
+                <picture class="main-screen__back">
+                    <source srcset="img/main-screen-mob.png" media="(max-width: 1023px)">
+                    <img src="img/main-screen-pc.png" alt="">
+                </picture>
+            </section>
+            <section class="product">
+                <div class="container">
+                    <div class="product__items">
+                        <article class="product__item">
+                            <div class="product__item_icon">
+                                <img src="img/product/fish.svg" alt="">
+                            </div>
+                            <p class="product__item_title">Прямые цены от поставщиков</p>
+                            <p class="product__item_content">Понимание реальной рыночной стоимости в момент закупки</p>
+                        </article>
+                        <article class="product__item">
+                            <div class="product__item_icon">
+                                <img src="img/product/box.svg" alt="">
+                            </div>
+                            <p class="product__item_title">Склад категории «А»</p>
+                            <p class="product__item_content">Отгрузка всех категорий товаров с единого  распределительного центра в Москве</p>
+                        </article>
+                        <article class="product__item">
+                            <div class="product__item_icon">
+                                <img src="img/product/infinite.svg" alt="">
+                            </div>
+                            <p class="product__item_title">Магистральная логистика</p>
+                            <p class="product__item_content">Доставка по всей территории России</p>
+                        </article>
+                        <article class="product__item">
+                            <div class="product__item_icon">
+                                <img src="img/product/bag-clock.svg" alt="">
+                            </div>
+                            <p class="product__item_title">Гарантия прозрачности сделок</p>
+                            <p class="product__item_content">Все поставщики  надёжного поставщика за несколько минут вместо стандартных 45 дней</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
         <section class="advantages toScroll">
             <div class="advantages__main container">
-                <h2 class="advantages__title">Наши преимущества:</h2>
-                <div class="advantages__block">
-                    <div class="advantages__block-slider">
-                        <div class="advantages__slider owl-carousel">
-                            <div class="advantages__slide"><img src="img/check-white.svg" alt="">Подтверждение наличия товара</div>
-                            <div class="advantages__slide"><img src="img/check-white.svg" alt="">Гарантированное качество товаров</div>
-                            <div class="advantages__slide"><img src="img/check-white.svg" alt="">Прямые цены  производителей</div>
-                            <div class="advantages__slide"><img src="img/check-white.svg" alt="">Гарантия прозрачности и чистоты сделок</div>
-                            <div class="advantages__slide"><img src="img/check-white.svg" alt="">Собственная служба поддержки клиентов и контроля качества</div>
-                            <div class="advantages__slide"><img src="img/check-white.svg" alt="">Организация логистики от склада до склада</div>
-                            <div class="advantages__slide"><img src="img/check-white.svg" alt="">Склад категории «А», соблюдение температурных режимов, расположение, технологии wms</div>
-                        </div>
-                    </div>
-                    <button class="advantages__next-button">
-                        <img src="img/next-icon.svg" alt="">
-                    </button>
-                </div>
+                <h2 class="advantages__title">Возможности платформы</h2>
                 <ul class="advantages__full-list">
-                    <li><img src="img/check-white.svg" alt="">Подтверждение наличия товара</li>
+                    <li><img src="img/check-white.svg" alt="">Быстрый и удобный поиск товара</li>
                     <li><img src="img/check-white.svg" alt="">Гарантированное качество товаров</li>
-                    <li><img src="img/check-white.svg" alt="">Прямые цены  производителей</li>
+                    <li><img src="img/check-white.svg" alt="">Прямые цены производителей вне зависимости от объема</li>
                     <li><img src="img/check-white.svg" alt="">Гарантия прозрачности и чистоты сделок</li>
-                    <li><img src="img/check-white.svg" alt="">Собственная служба поддержки клиентов и контроля качества</li>
+                    <li><img src="img/check-white.svg" alt="">Круглосуточная служба поддержки клиентов</li>
                     <li><img src="img/check-white.svg" alt="">Организация логистики от склада до склада</li>
-                    <li><img src="img/check-white.svg" alt="">Склад категории «А», соблюдение температурных режимов, расположение, технологии wms</li>
+                    <li><img src="img/check-white.svg" alt="">Собственный склад категории А с соблюдением температурных режимов</li>
                 </ul>
-                <div class="advantages__pc-buttons">
-                    <button class="advantages__toggle-button advantages__show-list-button">Показать списком</button>
-                    <button class="advantages__toggle-button advantages__hide-list-button">Скрыть список</button>
-                </div>
             </div>
-            <div class="advantages__full-list-images">
-                <div class="advantages__full-list-image">
-                    <img src="img/advantages/small/item1.jpg" alt="">
+            <div class="advantages__block">
+                <div class="advantages__slider owl-carousel">
+                    <div class="advantages__slide">
+                        <picture>
+                            <source srcset="img/advantages/small/item1.jpg" media="(max-width: 550px)">
+                            <img src="img/advantages/item1.jpg" alt="">
+                        </picture>
+                        <p>Собственный склад категории А с соблюдением температурных режимов</p>
+                    </div>
+                    <div class="advantages__slide">
+                        <picture>
+                            <source srcset="img/advantages/small/item2.jpg" media="(max-width: 550px)">
+                            <img src="img/advantages/item2.jpg" alt="">
+                        </picture>
+                        <p>Гарантированное качество товаров</p>
+                    </div>
+                    <div class="advantages__slide">
+                        <picture>
+                            <source srcset="img/advantages/small/item3.jpg" media="(max-width: 550px)">
+                            <img src="img/advantages/item3.jpg" alt="">
+                        </picture>
+                        <p>Прямые цены производителей вне зависимости от объема</p>
+                    </div>
+                    <div class="advantages__slide">
+                        <picture>
+                            <source srcset="img/advantages/small/item4.jpg" media="(max-width: 550px)">
+                            <img src="img/advantages/item4.jpg" alt="">
+                        </picture>
+                        <p>Прямые цены производителей вне зависимости от объема</p>
+                    </div>
+                    <div class="advantages__slide">
+                        <picture>
+                            <source srcset="img/advantages/small/item5.jpg" media="(max-width: 550px)">
+                            <img src="img/advantages/item5.jpg" alt="">
+                        </picture>
+                        <p>Гарантия прозрачности и чистоты сделок</p>
+                    </div>
+                    <div class="advantages__slide">
+                        <picture>
+                            <source srcset="img/advantages/small/item6.jpg" media="(max-width: 550px)">
+                            <img src="img/advantages/item6.jpg" alt="">
+                        </picture>
+                        <p>Круглосуточная служба поддержки клиентов</p>
+                    </div>
+                    <div class="advantages__slide">
+                        <picture>
+                            <source srcset="img/advantages/small/item7.jpg" media="(max-width: 550px)">
+                            <img src="img/advantages/item7.jpg" alt="">
+                        </picture>
+                        <p>Организация логистики от склада до склада</p>
+                    </div>
                 </div>
-                <div class="advantages__full-list-image">
-                    <img src="img/advantages/small/item2.jpg" alt="">
-                </div>
-                <div class="advantages__full-list-image">
-                    <img src="img/advantages/small/item3.jpg" alt="">
-                </div>
-                <div class="advantages__full-list-image">
-                    <img src="img/advantages/small/item4.jpg" alt="">
-                </div>
-                <div class="advantages__full-list-image">
-                    <img src="img/advantages/small/item5.jpg" alt="">
-                </div>
-                <div class="advantages__full-list-image">
-                    <img src="img/advantages/small/item6.jpg" alt="">
-                </div>
-                <div class="advantages__full-list-image">
-                    <img src="img/advantages/small/item7.jpg" alt="">
-                </div>
+                <button class="advantages__next-button"><img src="img/next-icon.svg" alt=""></button>
             </div>
-            <div class="advantages__images owl-carousel">
-                <div class="advantages__image">
-                    <img src="img/advantages/item1.jpg" alt="">
-                </div>
-                <div class="advantages__image">
-                    <img src="img/advantages/item2.jpg" alt="">
-                </div>
-                <div class="advantages__image">
-                    <img src="img/advantages/item3.jpg" alt="">
-                </div>
-                <div class="advantages__image">
-                    <img src="img/advantages/item4.jpg" alt="">
-                </div>
-                <div class="advantages__image">
-                    <img src="img/advantages/item5.jpg" alt="">
-                </div>
-                <div class="advantages__image">
-                    <img src="img/advantages/item6.jpg" alt="">
-                </div>
-                <div class="advantages__image">
-                    <img src="img/advantages/item7.jpg" alt="">
-                </div>
-            </div>
-            <div class="advantages__mob-buttons">
-                <button class="advantages__toggle-button advantages__toggle-button-mob advantages__show-list-button">Показать списком</button>
-                <button class="advantages__toggle-button advantages__toggle-button-mob advantages__hide-list-button">Скрыть список</button>
+            <div class="advantages__buttons">
+                <button class="button advantages__toggle-button advantages__show-list-button"><span>Показать списком</span></button>
+                <button class="button advantages__toggle-button advantages__hide-list-button"><span>Скрыть список</span></button>
             </div>
         </section>
         <section class="benefit toScroll">
             <div class="container">
-                <h2 class="title">Что вы получите:</h2>
+                <h2 class="title">Что вы получите</h2>
                 <div class="benefit__items">
                     <article class="benefit__item">
                         <div>
@@ -268,7 +266,7 @@
         </section>
         <section class="conditions toScroll">
             <div class="conditions__main container">
-                <h2 class="title">Условия подключения к платформе:</h2>
+                <h2 class="title">Условия подключения к платформе</h2>
                 <div class="conditions__block">
                     <div class="conditions__item">
                         <p class="conditions__item_title">Для производителей:</p>
@@ -287,6 +285,7 @@
                         </ul>
                     </div>
                 </div>
+                <button class="button conditions__button popup-callback-open-btn"><span>Подключиться</span></button>
             </div>
         </section>
 
@@ -355,6 +354,7 @@
             <p class="footer__content">Адрес:&nbsp;Индекс&nbsp;123022, г.&nbsp;Москва, ул.&nbsp;Рочдельская, д.&nbsp;15, стр.&nbsp;16, помещение&nbsp;I, офис&nbsp;1</p>
         </div>
     </div>
+    <img src="img/footer-img.png" alt="" class="footer__image">
 </footer></main>
 <script src="js/main.js"></script></body>
 </html>
