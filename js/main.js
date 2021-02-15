@@ -77,7 +77,7 @@ window.addEventListener('scroll', showCurrentBlock);
 window.addEventListener('mousewheel', function (event) {
     if (document.documentElement.scrollWidth >= 1025) {
         if (event.deltaY > 0 || event.wheelDelta < 0) {
-            if (document.documentElement.scrollTop + document.documentElement.offsetHeight + 10 >= toScroll[indexOfCurrentBlock].offsetTop + toScroll[indexOfCurrentBlock].offsetHeight) {
+            if (document.documentElement.scrollTop + document.documentElement.offsetHeight + 20 >= toScroll[indexOfCurrentBlock].offsetTop + toScroll[indexOfCurrentBlock].offsetHeight) {
                 if (toScroll[indexOfCurrentBlock+1]) {
                     toScroll[++indexOfCurrentBlock].scrollIntoView({
                         block: 'start',
