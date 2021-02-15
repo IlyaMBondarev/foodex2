@@ -352,7 +352,7 @@ $(document).ready(function() {
         showButton.click(function() {
             owlImagesSlider.style.maxHeight = '0';
             owlImagesSlider.style.minHeight = '0';
-            fullList.style.maxHeight = fullList.scrollHeight + 'px';
+            fullList.style.maxHeight = (fullList.scrollHeight + 50) + 'px';
             showButton.css({'display': 'none'});
             hideButton.css({'display': 'block'});
         })
