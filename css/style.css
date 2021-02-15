@@ -1166,12 +1166,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 650px) {
   .benefit__item {
-    padding: 20px 20px 20px 30px;
-  }
-}
-@media (max-width: 550px) {
-  .benefit__item {
-    padding-top: 10px;
+    padding: 50px 30px 40px 40px;
+    height: auto;
+    min-height: 420px;
   }
 }
 .benefit__item_title {
@@ -1181,17 +1178,14 @@ h1, h2, h3, h4, h5, h6 {
   color: #000000;
   text-align: center;
 }
-@media (max-width: 550px) {
-  .benefit__item_title {
-    font-size: 16px;
-  }
-}
 .benefit__item_list {
   margin-top: 30px;
 }
 @media (max-width: 650px) {
   .benefit__item_list {
-    margin-top: 10px;
+    padding-left: 15px;
+    margin-top: 20px;
+    padding-bottom: 30px;
   }
 }
 .benefit__item_list li {
@@ -1204,17 +1198,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 650px) {
   .benefit__item_list li {
-    padding-left: 0;
+    padding-left: 14px;
   }
 }
 @media (max-width: 550px) {
   .benefit__item_list li {
     font-size: 14px;
-  }
-}
-@media (max-width: 470px) {
-  .benefit__item_list li {
-    font-size: 12px;
   }
 }
 .benefit__item button {
