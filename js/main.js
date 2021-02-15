@@ -10,7 +10,7 @@ function showBlocks(i) {
 
 function showCurrentBlock() {
     if (document.documentElement.scrollTop !== 0) {
-        header.style.background = 'rgba(255,255,255,0.5)';
+        header.style.background = 'rgba(255,255,255,0.6)';
         changingColorBlock.style.color = "#000000";
         changingColorBlock.querySelector('svg > *').style.fill = "#000000";
         for (let i = 0; i < berries.length; i++) {
