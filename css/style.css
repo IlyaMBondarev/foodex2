@@ -948,30 +948,30 @@ h1, h2, h3, h4, h5, h6 {
   .advantages__next-button {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 30px;
     z-index: 3;
     transform: translateY(-50%);
     flex-grow: 1;
-    width: 50px;
     height: 50px;
-    min-width: 50px;
     min-height: 50px;
-    max-width: 50px;
     max-height: 50px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.58);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    background-color: transparent;
   }
-  .advantages__next-button:hover {
-    background-color: #ffffff;
+  .advantages__next-button svg {
+    height: 100%;
   }
-  .advantages__next-button:active {
-    background-color: #f1f1f3;
+  .advantages__next-button svg * {
+    fill: #ffffff;
+  }
+  .advantages__next-button:hover svg * {
+    fill: #f1f1f3;
+  }
+  .advantages__next-button:active svg * {
+    fill: #ffffff;
   }
 }
-@media (max-width: 767px) and (max-width: 400px) {
+@media (max-width: 400px) {
   .advantages__next-button {
     width: 25px;
     height: 25px;
@@ -1061,6 +1061,11 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   background: linear-gradient(0deg, #000000 -9.24%, #000000 -9.23%, rgba(0, 0, 0, 0) 73.79%);
 }
+@media (max-width: 767px) {
+  .advantages__slide::before {
+    background: linear-gradient(0deg, #000000 -23.11%, #000000 -23.1%, rgba(0, 0, 0, 0) 135.22%);
+  }
+}
 .advantages__slide img {
   object-fit: cover;
   height: 100%;
@@ -1082,7 +1087,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 767px) {
   .advantages__slide > p {
-    font-size: 20px;
+    font-size: 28px;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
   }
 }
 
