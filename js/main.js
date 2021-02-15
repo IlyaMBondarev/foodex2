@@ -13,17 +13,27 @@ function showCurrentBlock() {
         header.style.background = 'rgba(255,255,255,0.5)';
         changingColorBlock.style.color = "#000000";
         changingColorBlock.querySelector('svg > *').style.fill = "#000000";
+        for (let i = 0; i < berries.length; i++) {
+            berries[i].style.opacity = '0.5';
+        }
         if (document.documentElement.scrollHeight <= document.documentElement.scrollTop + document.documentElement.offsetHeight + footer.scrollHeight/2) {
-            left.style.top = '105vh';
-            right.style.top = '105vh';
+            for (let i = 0; i < berries.length; i++) {
+                berries[i].style.opacity = '';
+                berries[i].style.top = '110vh';
+            }
         } else {
-            left.style.top = '50vh';
-            right.style.top = '50vh';
+            for (let i = 0; i < berries.length; i++) {
+                berries[i].style.opacity = '0.5';
+                berries[i].style.top = '';
+            }
         }
     } else {
         header.style.background = '';
         changingColorBlock.style.color = "#ffffff";
         changingColorBlock.querySelector('svg > *').style.fill = "#ffffff";
+        for (let i = 0; i < berries.length; i++) {
+            berries[i].style.opacity = '';
+        }
     }
     for(let i = 0; i < toScroll.length; i++) {
         if (toScroll[i].offsetTop <= document.documentElement.scrollTop + 0.8 * document.documentElement.clientHeight) {
@@ -248,9 +258,21 @@ if ($('.popup-callback-bg').length) {
 
 // ягоды
 
+
+let berriesBlock = document.querySelector('.berries');
+let berries = berriesBlock.querySelectorAll('.berry');
+
+setTimeout(function () {
+    for (let i = 0; i < berries.length; i++) {
+        berries[i].classList.add('berry' + (i+1));
+    }
+}, 3000)
+
+
+
+/*
 let berriesBlock = document.querySelector('.berries');
 let sources = ['blackberry','blackcurrant','blueberry','cherry','raspberry','strawberry','blackberry2','blackcurrant2','raspberry2']
-
 
 setTimeout(function () {
     let srcLeft = Math.floor(Math.random()*sources.length);
@@ -289,7 +311,7 @@ setTimeout(function () {
         },1050)
     }, 5000)
 }, 3000)
-
+*/
 //карусель-слайдер на странице услуги
 
 $(document).ready(function() {

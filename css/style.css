@@ -1398,63 +1398,158 @@ h1, h2, h3, h4, h5, h6 {
 .berry {
   position: absolute;
   top: -20vh;
-  width: 100px;
+  height: 15vh;
+  max-width: 150px;
   opacity: 1;
 }
-@media (max-width: 1550px) {
+@media (max-width: 767px) {
   .berry {
-    width: 70px;
+    max-width: 90px;
+    height: auto;
   }
 }
-@media (max-width: 1290px) {
+@media (max-width: 450px) {
   .berry {
-    width: 50px;
+    max-width: 12vw;
   }
 }
-.berry-left {
-  left: 30px;
-  transition: opacity 1s linear, top 5.2s ease;
+.berry1 {
+  top: 10vh;
+  left: -5vh;
+  transition: top 1.2s ease, opacity 0.4s linear;
+  animation: 2s linear 0.2s infinite alternate mover;
 }
-@media (max-width: 1550px) {
-  .berry-left {
-    left: 10px;
+@media (max-width: 767px) {
+  .berry1 {
+    left: -30px;
   }
 }
-@media (max-width: 1440px) {
-  .berry-left {
-    left: -10px;
+@media (max-width: 450px) {
+  .berry1 {
+    left: -5vw;
   }
 }
-@media (max-width: 500px) {
-  .berry-left {
-    left: -20px;
+.berry2 {
+  top: 33vh;
+  left: -5vh;
+  transition: top 1.5s ease, opacity 0.4s linear;
+  animation: 2s linear 0.3s infinite alternate mover;
+}
+@media (max-width: 767px) {
+  .berry2 {
+    left: -30px;
   }
 }
-.berry-right {
-  right: 30px;
-  transition: opacity 1s linear, top 5.2s ease 1.2s;
-}
-@media (max-width: 1550px) {
-  .berry-right {
-    right: 10px;
+@media (max-width: 450px) {
+  .berry2 {
+    left: -5vw;
   }
 }
-@media (max-width: 1440px) {
-  .berry-right {
-    right: -10px;
+.berry3 {
+  top: 57vh;
+  left: -5vh;
+  transition: top 1.2s ease, opacity 0.4s linear;
+  animation: 2s linear 0.3s infinite alternate mover;
+}
+@media (max-width: 767px) {
+  .berry3 {
+    left: -30px;
   }
 }
-@media (max-width: 500px) {
-  .berry-right {
-    right: -20px;
+@media (max-width: 450px) {
+  .berry3 {
+    left: -5vw;
+  }
+}
+.berry4 {
+  top: 80vh;
+  left: -5vh;
+  transition: top 1.5s ease, opacity 0.4s linear;
+  animation: 2s linear 0.1s infinite alternate mover;
+}
+@media (max-width: 767px) {
+  .berry4 {
+    left: -30px;
+  }
+}
+@media (max-width: 450px) {
+  .berry4 {
+    left: -5vw;
+  }
+}
+.berry5 {
+  top: 10vh;
+  right: -5vh;
+  transition: top 1.2s ease, opacity 0.4s linear;
+  animation: 2s linear 0.1s infinite alternate mover;
+}
+@media (max-width: 767px) {
+  .berry5 {
+    right: -30px;
+  }
+}
+@media (max-width: 450px) {
+  .berry5 {
+    right: -5vw;
+  }
+}
+.berry6 {
+  top: 33vh;
+  right: -5vh;
+  transition: top 1.5s ease, opacity 0.4s linear;
+  animation: 1.7s linear 0.2s infinite alternate mover;
+}
+@media (max-width: 767px) {
+  .berry6 {
+    right: -30px;
+  }
+}
+@media (max-width: 450px) {
+  .berry6 {
+    right: -5vw;
+  }
+}
+.berry7 {
+  top: 57vh;
+  right: -5vh;
+  transition: top 1.2s ease, opacity 0.4s linear;
+  animation: 2s linear 0s infinite alternate mover;
+}
+@media (max-width: 767px) {
+  .berry7 {
+    right: -30px;
+  }
+}
+@media (max-width: 450px) {
+  .berry7 {
+    right: -5vw;
+  }
+}
+.berry8 {
+  top: 80vh;
+  right: -5vh;
+  transition: top 1.5s ease, opacity 0.4s linear;
+  animation: 1.5s linear 0.3s infinite alternate mover;
+}
+@media (max-width: 767px) {
+  .berry8 {
+    right: -30px;
+  }
+}
+@media (max-width: 450px) {
+  .berry8 {
+    right: -5vw;
   }
 }
 
-@keyframes rotating {
+@keyframes mover {
   0% {
-    transform: translateY(-50%) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-2.5vh) rotate(-15deg);
   }
   100% {
-    transform: translateY(-50%) rotate(720deg);
+    transform: translateY(-5vh) rotate(5deg);
   }
 }
