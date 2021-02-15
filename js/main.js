@@ -77,7 +77,7 @@ window.addEventListener('scroll', showCurrentBlock);
 window.addEventListener('mousewheel', function (event) {
     if (document.documentElement.scrollWidth >= 1025) {
         if (event.deltaY > 0 || event.wheelDelta < 0) {
-            if (document.documentElement.scrollTop + document.documentElement.offsetHeight + 1 >= toScroll[indexOfCurrentBlock].offsetTop + toScroll[indexOfCurrentBlock].offsetHeight) {
+            if (document.documentElement.scrollTop + document.documentElement.offsetHeight + 10 >= toScroll[indexOfCurrentBlock].offsetTop + toScroll[indexOfCurrentBlock].offsetHeight) {
                 if (toScroll[indexOfCurrentBlock+1]) {
                     toScroll[++indexOfCurrentBlock].scrollIntoView({
                         block: 'start',
@@ -337,7 +337,7 @@ $(document).ready(function() {
             owlImages.data('owl.carousel').settings.autoplay = false;
             owlImages.data('owl.carousel').options.autoplay = false;
             owlImages.trigger('refresh.owl.carousel');
-            setTimeout(() => {
+            setTimeout(function () {
                 owlImages.trigger('play.owl.autoplay');
                 owlImages.data('owl.carousel').settings.autoplay = true;
                 owlImages.data('owl.carousel').options.autoplay = true;
