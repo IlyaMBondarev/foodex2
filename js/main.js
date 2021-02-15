@@ -95,7 +95,7 @@ window.addEventListener('mousewheel', function (event) {
                 }
             }
         } else if (event.deltaY < 0 || event.wheelDelta > 0) {
-            if (document.documentElement.scrollTop <= toScroll[indexOfCurrentBlock].offsetTop) {
+            if (document.documentElement.scrollTop - 20 <= toScroll[indexOfCurrentBlock].offsetTop) {
                 if (toScroll[indexOfCurrentBlock-1]) {
                     if (!(event.deltaY)) {
                         toScroll[--indexOfCurrentBlock].scrollIntoView(false);
